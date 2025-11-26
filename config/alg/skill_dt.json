@@ -1,0 +1,78 @@
+{
+    "alg_name": "skill_dt",
+    "skill_quantized_model": {
+        "class": "SkillQuantizedTransformer",
+        // varying param
+        "embed_time_step": true,
+        "multi_head": false,
+        "augment": true,
+        // vq
+        "n_codebook": 16,
+        "vq_size": 64,
+        "kmeans_init": true,
+        "vq_coef": 1,
+        // network
+        "hidden_size": 256,
+        "mlp_n_layer": 3,
+        "n_layer": 6,
+        "n_head": 8,
+        "activation_function": "relu",
+        "resid_pdrop": 0.1,
+        "attn_pdrop": 0.1,
+        // training
+        "batch_size": 16,
+        "max_norm": 1.0,
+        "warmup_steps": 5000,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.0001,
+        "resample": true,
+        
+        "max_iters": 30000,
+        "save_interval": 30000
+    },
+    "skill_dt_model": {
+        "class": "SkillPromptDecisionTransformer",
+        // varying param
+        "preprocess_skill": true,
+        "embed_skill_encode": true,
+        "augment": true,
+        // network
+        "max_length": 20,
+        "max_ep_len": 1000,
+        "hidden_size": 256,
+        "n_layer": 6,
+        "n_head": 8,
+        "activation_function": "relu",
+        "n_positions": 1024,
+        "resid_pdrop": 0.1,
+        "attn_pdrop": 0.1,
+        // training
+        "batch_size": 8,
+        "max_norm": 1.0,
+        "warmup_steps": 5000,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.0001,
+        "focal_loss": true,
+        "focal_loss_alpha": 1,
+        "focal_loss_gamma": 2,
+        // prompt
+        "prompt_episode": 1,
+        "prompt_length": 10,
+
+        "prompt_no_rtg": false,
+        "stochastic_prompt": true,
+        "no_prompt": false,
+
+        "max_iters": 70000,
+        "train_eval_interval": 5000,
+        "save_interval": 70000,
+
+        "few_max_iters": 3000,
+        "few_eval_interval": 500,
+        "few_save_interval": 3000
+    },
+    "skill_length": 10,
+
+    "load_path": "",
+    "load_iter": 100000
+}

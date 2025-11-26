@@ -1,0 +1,12 @@
+{
+    "no_rtg": false,
+    "src_state_dim": [39],
+    "state_dim": [39],
+    "act_dim": [4],
+    "vec_env_num": 50,
+
+    "no_state_normalize": false,
+    "average_state_mean": true,
+
+    "preprocess_traj_num": 50
+}

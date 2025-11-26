@@ -1,0 +1,45 @@
+{
+    "alg_name": "prompt_dt",
+    "model": {
+        "class": "PromptDecisionTransformer",
+        // network
+        "task_input": false,
+        "multi_head": false,
+        "max_length": 20,
+        "max_ep_len": 1000,
+        "hidden_size": 256,
+        "n_layer": 6,
+        "n_head": 8,
+        "activation_function": "relu",
+        "n_positions": 1024,
+        "resid_pdrop": 0.1,
+        "attn_pdrop": 0.1,
+        // training
+        "batch_size": 8,
+        "max_norm": 1.0,
+        "warmup_steps": 10000,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.0001,
+        // prompt
+        "no_prompt": false,
+        "prompt_episode": 1,
+        "prompt_length": 10,
+        "prompt_no_rtg": false,
+        "stochastic_prompt": true,
+        
+        "no_r": false,
+        "no_rtg": false,
+
+        "max_iters": 100000,
+        "train_eval_interval": 5000,
+        "save_interval": 100000,
+
+        "few_max_iters": 3000,
+        "few_eval_interval": 500,
+        "few_save_interval": 3000
+
+    },
+
+    "load_path": "",
+    "load_iter": 100000
+}

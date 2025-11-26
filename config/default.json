@@ -1,0 +1,22 @@
+{
+    "alg_name": "prompt_dt",
+    "few_shot": false,
+    "seed": 1,
+    "log_to_wandb": true,
+    "device": "cuda",
+    "env": "metaworld-mt50",
+    
+    "pct_traj": 1, // Only train on a percentage of trajectories with top returns (for BC)
+    "mode": "normal",
+    "data_mode": "expert", // ['expert', 'medium']
+    "few_data_mode": "expert",
+    "preprocess_rtg": true,
+
+    "num_eval_episodes": 50,
+
+    "evaluation": false,
+
+    "render": false,
+
+    "id": 1
+}
